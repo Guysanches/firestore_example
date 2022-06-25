@@ -1,5 +1,5 @@
-import 'package:firestore_example/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -14,10 +14,7 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     Future.delayed(
       const Duration(seconds: 3),
-      () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: ((context) => const HomePage())));
-      },
+      () => Modular.to.navigate('/home'),
     );
   }
 

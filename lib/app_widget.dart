@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-
-import 'pages/splash_page/splash_page.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    Modular.setInitialRoute('/splash');
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Firebase Example',
       theme: ThemeData(
@@ -15,7 +16,8 @@ class AppWidget extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData.dark(),
-      home: const SplashPage(),
+      routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
     );
   }
 }

@@ -5,9 +5,21 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Menu'),
+        centerTitle: true,
+      ),
       body: Center(
-        child: Text('HomePage'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Button'),
+            ),
+          ],
+        ),
       ),
     );
   }
